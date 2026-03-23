@@ -97,6 +97,63 @@ public class Program
         
         */
         // #endregion
+
+
+        // #region Problem 3
+
+        /*
+        
+
+    Q3 : Look at the following code and answer the questions below:public abstract class Appliance
+        {
+
+            public string Brand { get; set; }
+
+            protected Appliance(string brand) { Brand = brand; }
+
+            public abstract double PowerConsumption();
+
+            public virtual string Status() => "Standby";
+
+            public string Label() => $"{Brand} - {PowerConsumption()}W";
+        }
+
+        public class WashingMachine : Appliance
+        {
+            public WashingMachine(string brand) : base(brand) { }
+            public override double PowerConsumption() => 500;
+            public override string Status() => "Washing";
+        }
+
+        public class Toaster : Appliance
+        {
+            public Toaster(string brand) : base(brand) { }
+            public override double PowerConsumption() => 800;
+        }
+        a) Can you write: Appliance a = new Appliance("LG"); ? Why or why not?
+        b) What is the difference between the three methods: PowerConsumption(), Status(), and Label()? Why did the designer make each one abstract, virtual, or concrete?
+        c) If you call Status() on a Toaster object, what will it return? Why?
+
+        */
+
+        /*
+        
+        A ) No , Beacuse we Can't Take an opject From Abstract Class 
+
+        B) PowerConsumption() Must be overridden in derived classes because it is abstract.            
+           Status() Can be overridden optionally because it is virtual (has a default implementation).
+           Label() Cannot be overridden because it is a non-virtual (concrete) method.
+
+            Why did the designer make each one abstract, virtual, or concrete?
+               Abstract must be implemented by all derived classes
+                Virtual  has default behavior but can be overridden
+                Concrete  fixed implementation, no override needed
+
+c)      C) It returns "Standby" because Toaster does not override Status().
+        */ 
+
+        
+        // #endregion
         #endregion
     }
 }
