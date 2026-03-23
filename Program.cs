@@ -154,6 +154,90 @@ c)      C) It returns "Standby" because Toaster does not override Status().
 
         
         // #endregion
+      
+      
+      #region Problem 4
+
+
+      /*
+      
+
+     Q4 : Look at the following code and answer the questions below:
+
+        // File: Calculator.cs
+        public partial class Calculator
+        {
+            public double LastResult { get; private set; }
+            partial void OnCalculated(double result);
+
+            public double Add(double a, double b)
+            {
+                LastResult = a + b;
+                OnCalculated(LastResult);
+                return LastResult;
+            }
+        }
+
+        // File: Calculator.Logging.cs
+        public partial class Calculator
+        {
+            partial void OnCalculated(double result)
+            {
+                Console.WriteLine($"Log: result = {result}");
+            }
+        }
+
+        // File: DoubleExtensions.cs
+        public static class DoubleExtensions
+        {
+            public static string ToCurrency(this double value)
+                => $"${value:F2}";
+        }
+        a) What is a partial class? Why would a developer split Calculator into two files?
+        b) What is a partial method? What happens if the OnCalculated() implementation in Calculator.Logging.cs is deleted — will the code still compile? Why?
+        c) What is an extension method? What are the three rules for writing one?
+        d) What will the following code print?
+        Calculator calc = new Calculator();
+        double result = calc.Add(19.5, 0.5);
+        Console.WriteLine(result.ToCurrency());
+      
+      */
+
+      /*
+      
+      A) A partial class is a class that can be split into multiple files, and all parts are combined into one class at compile time.
+
+        :The developer splits Calculator into two files to:
+
+        Organize code better
+        Separate concerns (logic vs logging)
+        Make it easier for multiple developers to work on the same class
+      
+
+      B) A partial method is a method declared in one part of a partial class and can be optionally implemented in another part.
+
+         If the implementation of OnCalculated() is deleted:
+         1- The code will still compile successfully
+         2- The Compile Will Ignore Any Partial Method Call If There's no Implementation 
+
+
+      C) An extension method allows you to add new methods to an existing type without modifying its original code.
+
+        : Rules :
+
+        1- Must Be Inside a Static Class 
+        2- Must be a Static Medtod 
+        3 The First Param must Use This Keyword
+
+
+        D) It will Print 
+        20.00
+      
+      
+      */
+        
+      #endregion
+      
         #endregion
     }
 }
