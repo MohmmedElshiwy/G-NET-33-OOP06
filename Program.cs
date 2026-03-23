@@ -59,6 +59,44 @@ public class Program
         */
         // #endregion
 
+        // #region Problem 2
+        //Q2 : What is the difference between an abstract class and an interface? Give at least four differences. When would you choose one over the other?
+
+
+        /*
+        
+        1- Abstract
+
+        A) Can have implemented methods + abstract methods
+        B) Can Have Fields
+        C) Support Constractor 
+        D) a Class Can inherit From one Abstract Calss 
+
+        2- Interface
+        A) Contains Method Signatures
+        B) Can't Have Fields  
+        C) Dosn't Have Constractor
+        D) a Class Can implement Multiple Interfaces
+        
+        */
+
+
+        // when to use 
+
+        /*
+        
+        1- Abstract 
+        A) You have shared code between classes
+        B) You want base functionality + some abstraction
+        C) There is a strong "is-a" relationship
+
+        2- Interface 
+        A) You want to define a contract
+        B) No shared implementation needed
+        C) Multiple inheritance
+        
+        */
+        // #endregion
         #endregion
     }
 }
